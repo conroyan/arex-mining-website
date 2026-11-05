@@ -237,3 +237,5 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 .flow-n{flex-shrink:0;font-family:'Archivo Black',sans-serif;font-size:1.35rem;line-height:1;color:var(--teal)}
 .flow-t{font-family:'Archivo',sans-serif;font-weight:600;font-size:1.02rem;line-height:1.35;color:var(--slate)}
 @media(max-width:600px){.flow li{padding:1rem 1.1rem;gap:.9rem}}
+.wide-photo{width:100%;height:auto;aspect-ratio:1800/736;object-fit:cover;border-radius:3px;margin-top:3.2rem}
+@media(max-width:600px){.wide-photo{aspect-ratio:4/3;object-position:35% center;margin-top:2.4rem}}
