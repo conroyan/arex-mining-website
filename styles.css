@@ -1,14 +1,14 @@
 /* AREX Mining — corporate site
-   Built on the 3C Resources site template; AREX copper palette */
+   Brand palette: #043837 · #044448 · #085A61 · #00868E (primary) */
 :root{
-  --slate:#1F2B31;       /* Charcoal — primary */
-  --teal:#B5652F;        /* Copper — accent, large text & graphics only */
-  --teal-deep:#8A4A1F;   /* Deep Copper — secondary bands, links, hover */
-  --mist:#717F85;        /* Mist — metadata, captions */
-  --pale-teal:#F7EFE8;   /* Pale Copper */
-  --pale-slate:#F2F2F0;
-  --rule:#D6D3CD;
-  --ink:#3A4449;         /* Body ink */
+  --slate:#043837;       /* Deep Petrol — dark backgrounds, headings */
+  --teal:#00868E;        /* AREX Teal — primary brand colour, large text & graphics */
+  --teal-deep:#085A61;   /* Deep Teal — bands, links, buttons, hover */
+  --mist:#5F7A7C;        /* Mist — metadata, captions */
+  --pale-teal:#E8F4F5;   /* Pale Teal */
+  --pale-slate:#F1F5F5;
+  --rule:#CBDCDD;
+  --ink:#2E4446;         /* Body ink */
   --draft:#8A5D1F;
   --draft-bg:#FBF6EE;
 }
@@ -47,7 +47,7 @@ p+p{margin-top:1.05em}
 .nav-links .sub-toggle{background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
 .sub-toggle .chev{width:9px;height:9px;transition:transform .15s}
 .has-sub{position:relative}
-.sub{list-style:none;display:none;position:absolute;top:100%;left:-1.2rem;min-width:230px;background:#fff;border:1px solid var(--rule);border-top:3px solid var(--teal);border-radius:0 0 3px 3px;padding:.6rem 0;box-shadow:0 10px 24px rgba(31,43,49,.10)}
+.sub{list-style:none;display:none;position:absolute;top:100%;left:-1.2rem;min-width:230px;background:#fff;border:1px solid var(--rule);border-top:3px solid var(--teal);border-radius:0 0 3px 3px;padding:.6rem 0;box-shadow:0 10px 24px rgba(4,56,55,.10)}
 .has-sub:hover>.sub,.has-sub:focus-within>.sub,.has-sub.open>.sub{display:block}
 .has-sub:hover .chev,.has-sub.open .chev{transform:rotate(180deg)}
 .sub a{display:block;padding:.5rem 1.2rem;border-bottom:none;font-size:.86rem}
@@ -70,12 +70,12 @@ p+p{margin-top:1.05em}
 /* heroes */
 .hero{position:relative;color:#fff;min-height:70vh;display:flex;align-items:flex-end;isolation:isolate;background:var(--slate);overflow:hidden}
 .hero .contour-bg{color:var(--teal);opacity:.45}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(175deg,rgba(31,43,49,0) 0%,rgba(31,43,49,0) 45%,rgba(31,43,49,.55) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(175deg,rgba(4,56,55,0) 0%,rgba(4,56,55,0) 45%,rgba(4,56,55,.55) 100%)}
 .hero .wrap{position:relative;z-index:2;padding-top:6rem;padding-bottom:8rem;width:100%}
 .hero .eyebrow{color:#fff}
 .hero .eyebrow::before{background:var(--teal)}
 .hero .hero-title{max-width:16em;font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(1.9rem,4.4vw,3.3rem);line-height:1.1;letter-spacing:-.005em;color:#fff}
-.hero .hero-sub{font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(1rem,1.7vw,1.35rem);line-height:1.35;color:#EDE6E0;max-width:26em;margin-top:1rem}
+.hero .hero-sub{font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(1rem,1.7vw,1.35rem);line-height:1.35;color:#E3EFEF;max-width:26em;margin-top:1rem}
 .hero .btn{margin-top:2.2rem}
 @media(max-width:880px){.hero{min-height:60vh}.hero .wrap{padding-bottom:5rem}}
 
@@ -84,7 +84,7 @@ p+p{margin-top:1.05em}
 .page-hero .wrap{position:relative;z-index:2;padding:5rem 32px 3.5rem}
 .page-hero h1,.page-hero .eyebrow{color:#fff}
 .page-hero .eyebrow::before{background:var(--teal)}
-.page-hero p{max-width:42em;margin-top:1.2rem;color:#E4E0DB;font-size:1.05rem}
+.page-hero p{max-width:42em;margin-top:1.2rem;color:#DCEBEB;font-size:1.05rem}
 .page-hero.tall .wrap{padding-bottom:6rem}
 @media(max-width:600px){.page-hero .wrap{padding:3.5rem 20px 2.8rem}}
 
@@ -97,19 +97,19 @@ section{padding:5rem 0}
 @media(max-width:600px){section{padding:3.6rem 0}}
 .section-alt{background:var(--pale-slate);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .section-tint{background:var(--pale-teal);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.section-deep{background:var(--slate);color:#DDE1E2}
-.section-teal{background:var(--teal-deep);color:#F3E7DE}
+.section-deep{background:var(--slate);color:#D7E6E6}
+.section-teal{background:var(--teal-deep);color:#E2F1F1}
 .section-deep h2,.section-deep h3,.section-teal h2,.section-teal h3{color:#fff}
 .section-deep .eyebrow,.section-teal .eyebrow{color:#fff}
 .section-deep .eyebrow::before{background:var(--teal)}
-.section-teal .eyebrow::before{background:var(--pale-teal)}
+.section-teal .eyebrow::before{background:#7FD3D8}
 .section-deep a,.section-teal a{color:#fff}
 
 .strip{background:var(--slate);color:#fff}
 .strip .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(255,255,255,.16);padding:0}
 .strip .cell{background:var(--slate);padding:1.7rem 1.9rem}
 .strip .cell b{font-family:'Archivo',sans-serif;font-weight:700;font-size:1.3rem;display:block;line-height:1.2}
-.strip .cell span{font-size:.78rem;letter-spacing:.12em;color:#B9C0C3;display:block;margin-top:.4rem}
+.strip .cell span{font-size:.78rem;letter-spacing:.12em;color:#A6C4C4;display:block;margin-top:.4rem}
 
 .grid{display:grid;gap:1.6rem}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
@@ -146,7 +146,7 @@ a.card:hover{border-color:var(--teal);transform:translateY(-2px)}
 .values{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;margin-top:2.2rem}
 .value{border-top:2px solid var(--teal);padding-top:1.2rem}
 .value h3{font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.95rem;color:var(--teal-deep)}
-.section-deep .value h3{color:#E9B48C}
+.section-deep .value h3{color:#7FD3D8}
 .section-teal .value{border-top-color:rgba(255,255,255,.55)}
 .section-teal .value h3{color:#fff}
 .value p{font-size:1rem}
@@ -183,13 +183,13 @@ form .btn{margin-top:1.7rem}
 .draft::before{content:"Pendiente \2014 completar";display:block;font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--draft);margin-bottom:.4rem}
 html[lang="en"] .draft::before{content:"Draft \2014 content needed"}
 
-.site-footer{background:var(--slate);color:#C3CACD;padding:3.5rem 0 2.5rem;font-size:.9rem}
+.site-footer{background:var(--slate);color:#B7CFCF;padding:3.5rem 0 2.5rem;font-size:.9rem}
 .site-footer .cols{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:2.2rem;align-items:center}
 .site-footer nav{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem}
-.site-footer nav a{color:#C3CACD;text-decoration:none;letter-spacing:.11em;font-size:.8rem}
+.site-footer nav a{color:#B7CFCF;text-decoration:none;letter-spacing:.11em;font-size:.8rem}
 .site-footer nav a:hover{color:#fff}
-.entity{font-size:.8rem;letter-spacing:.02em;color:#A3ADB1;margin-bottom:1.1rem}
-.legal{border-top:1px solid rgba(255,255,255,.18);padding-top:1.6rem;font-size:.79rem;line-height:1.6;color:#A3ADB1;max-width:70em}
+.entity{font-size:.8rem;letter-spacing:.02em;color:#9BB6B6;margin-bottom:1.1rem}
+.legal{border-top:1px solid rgba(255,255,255,.18);padding-top:1.6rem;font-size:.79rem;line-height:1.6;color:#9BB6B6;max-width:70em}
 
 /* decorative contour motif */
 .has-contour{position:relative;overflow:hidden;background:var(--pale-slate)}
@@ -219,7 +219,7 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 
 /* social links */
 .social{display:flex;gap:.6rem;align-items:center}
-.social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:3px;color:#C3CACD;text-decoration:none}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:3px;color:#B7CFCF;text-decoration:none}
 .social a:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
 .social svg{width:19px;height:19px}
 
@@ -230,7 +230,7 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 
 /* vertical flow chart */
 .flow{list-style:none;margin-top:2.2rem;max-width:560px;counter-reset:none}
-.flow li{position:relative;display:flex;align-items:center;gap:1.2rem;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--teal);border-radius:3px;padding:1.15rem 1.4rem;margin-bottom:46px;box-shadow:0 2px 8px rgba(31,43,49,.05)}
+.flow li{position:relative;display:flex;align-items:center;gap:1.2rem;background:#fff;border:1px solid var(--rule);border-left:5px solid var(--teal);border-radius:3px;padding:1.15rem 1.4rem;margin-bottom:46px;box-shadow:0 2px 8px rgba(4,56,55,.05)}
 .flow li:last-child{margin-bottom:0}
 .flow li:not(:last-child)::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:34px;margin-top:1px;background:var(--teal);transform:translateX(-50%)}
 .flow li:not(:last-child)::before{content:"";position:absolute;left:50%;top:calc(100% + 33px);width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid var(--teal);transform:translateX(-50%)}
@@ -250,9 +250,9 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 
 /* page hero with photo */
 .page-hero.photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.page-hero.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(31,43,49,.88) 0%,rgba(31,43,49,.70) 45%,rgba(31,43,49,.25) 100%)}
+.page-hero.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(4,56,55,.88) 0%,rgba(4,56,55,.70) 45%,rgba(4,56,55,.25) 100%)}
 .page-hero.photo .wrap{padding-top:7rem;padding-bottom:6.5rem}
-@media(max-width:700px){.page-hero.photo::after{background:linear-gradient(180deg,rgba(31,43,49,.55) 0%,rgba(31,43,49,.85) 100%)}}
+@media(max-width:700px){.page-hero.photo::after{background:linear-gradient(180deg,rgba(4,56,55,.55) 0%,rgba(4,56,55,.85) 100%)}}
 
 /* role cards (project pages) */
 .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.2rem}
