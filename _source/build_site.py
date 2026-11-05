@@ -3,9 +3,9 @@ Adding a language later: add its strings to NAV/UI and each page's dict, plus LA
 import os, sys
 
 OUT = sys.argv[1]
-LANGS = ["es", "en", "zh"]     # future: "pt", "de"
+LANGS = ["es", "en", "zh", "pt"]     # future: "de"
 LANG_LABEL = {"es": "ES", "en": "EN", "zh": "中文", "pt": "PT", "de": "DE"}
-HTML_LANG = {"es": "es", "en": "en", "zh": "zh-Hans"}
+HTML_LANG = {"es": "es", "en": "en", "zh": "zh-Hans", "pt": "pt-BR"}
 
 def href(slug, lang):
     return f"{slug}.html" if lang == "es" else f"{slug}-{lang}.html"
@@ -88,24 +88,30 @@ UI = {
 }
 
 # Mandarin pages reuse the English page structure; text is swapped from zh.json
-NAV["zh"] = dict(NAV["en"]); UI["zh"] = dict(UI["en"])
+for _l in ("zh", "pt"):
+    NAV[_l] = dict(NAV["en"]); UI[_l] = dict(UI["en"])
 
 import json, re as _re
-ZH_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "zh.json")
-ZH = json.load(open(ZH_PATH, encoding="utf-8")) if os.path.exists(ZH_PATH) else {}
-MISSING = set()
-KEEP = {"AREX Mining", "San Romeleo", "Tres Cruces", "ES", "EN", "中文", "→", "·", "*", "LinkedIn"}
+HERE = os.path.dirname(os.path.abspath(__file__))
+ZH_PATH = os.path.join(HERE, "zh.json")
+TABLES = {l: (json.load(open(os.path.join(HERE, f"{l}.json"), encoding="utf-8")) if os.path.exists(os.path.join(HERE, f"{l}.json")) else {}) for l in ("zh", "pt")}
+ZH = TABLES["zh"]
+CUR = {"t": ZH, "lang": "zh"}
+MISSING = {}
+KEEP = {"AREX Mining", "San Romeleo", "Tres Cruces", "ES", "EN", "中文", "PT", "→", "·", "*", "LinkedIn", "website"}
 
 def _tr(text):
     t = text.strip()
     if not t or not _re.search(r"[A-Za-z]", t) or t in KEEP:
         return text
-    if t in ZH:
-        return text.replace(t, ZH[t])
-    MISSING.add(t)
+    tbl = CUR["t"]
+    if t in tbl:
+        return text.replace(t, tbl[t])
+    MISSING.setdefault(CUR["lang"], set()).add(t)
     return text
 
-def to_zh(html):
+def to_lang(html, lang):
+    CUR["t"] = TABLES[lang]; CUR["lang"] = lang
     head, sep, rest = html.partition("<body>")
     def attr(m):
         return f'{m.group(1)}="{_tr(m.group(2))}"'
@@ -212,7 +218,7 @@ MVV = {
            ("Values", "Transparency, honesty and trust are the ethical foundations of how we negotiate. Integrity defines our spirit, and we act with responsibility and commitment. We believe in sustainable results and continuous improvement.")],
 }
 
-MVV["zh"] = MVV["en"]
+MVV["zh"] = MVV["pt"] = MVV["en"]
 
 def values_block(lang, dark=False):
     return '<div class="values">' + "".join(
@@ -237,7 +243,7 @@ SERVICES = {
     ],
 }
 
-SERVICES["zh"] = SERVICES["en"]
+SERVICES["zh"] = SERVICES["pt"] = SERVICES["en"]
 
 def services_grid(lang, n=6):
     return '<div class="grid grid-3" style="margin-top:2.4rem">' + "".join(
@@ -720,9 +726,9 @@ for slug, fn in PAGES.items():
         title, desc, body = fn(lang)
         with open(os.path.join(OUT, href(slug, lang)), "w", encoding="utf-8") as fh:
             html = page(lang, slug, title, desc, body)
-            fh.write(to_zh(html) if lang == "zh" else html)
+            fh.write(to_lang(html, lang) if lang in TABLES else html)
         count += 1
 print("pages:", count)
-if MISSING:
-    json.dump(sorted(MISSING), open(os.path.join(os.path.dirname(ZH_PATH), "zh_missing.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
-    print("zh missing:", len(MISSING))
+for _l, _m in MISSING.items():
+    json.dump(sorted(_m), open(os.path.join(HERE, f"{_l}_missing.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+    print(_l, "missing:", len(_m))

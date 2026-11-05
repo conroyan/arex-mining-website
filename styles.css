@@ -267,3 +267,4 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 html[lang^="zh"] .nav-links .sub-toggle,html[lang^="zh"] .card .more,html[lang^="zh"] .card .kicker,html[lang^="zh"] .news-tag,html[lang^="zh"] .news-link a,html[lang^="zh"] .value h3,html[lang^="zh"] .flow-t,html[lang^="zh"] .role p,html[lang^="zh"] .notice,html[lang^="zh"] .news-item time,html[lang^="zh"] .legal-doc .doc-date,html[lang^="zh"] .site-footer nav a,html[lang^="zh"] .pull p{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",system-ui,sans-serif;letter-spacing:.04em;text-transform:none}
 html[lang^="zh"] .hero .hero-title,html[lang^="zh"] .hero .hero-sub{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",system-ui,sans-serif;letter-spacing:.02em}
 html[lang^="zh"] .draft::before{content:"待补充内容"}
+html[lang^="pt"] .draft::before{content:"Pendente \2014 completar"}
