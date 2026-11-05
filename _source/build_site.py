@@ -377,10 +377,11 @@ def services(lang):
 PAGES["services"] = services
 
 def mineral_page(slug, eyebrow, title, spiel, proj_slug, kicker, ptitle, ptext, lang, meta_title, meta_desc, img=None, alt=""):
-    body = (page_hero(eyebrow, title, spiel, tall=True, img=img, alt=alt) +
+    pic = f'<img class="proj-photo" src="{img}" alt="{alt}" loading="lazy">' if img else ""
+    body = (page_hero(eyebrow, title, spiel, tall=True) +
             f'<section><div class="wrap"><span class="eyebrow">{"Proyectos" if lang == "es" else "Projects"}</span>'
             f'<h2>{"Nuestro proyecto" if lang == "es" else "Our project"}</h2>'
-            f'<div class="grid grid-2" style="margin-top:2rem">{project_card(lang, proj_slug, kicker, ptitle, ptext)}</div></div></section>')
+            f'<div class="grid grid-2 proj-row" style="margin-top:2rem">{project_card(lang, proj_slug, kicker, ptitle, ptext)}{pic}</div></div></section>')
     return meta_title, meta_desc, body
 
 def copper(lang):
