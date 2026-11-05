@@ -239,3 +239,11 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 @media(max-width:600px){.flow li{padding:1rem 1.1rem;gap:.9rem}}
 .wide-photo{width:100%;height:auto;aspect-ratio:1800/736;object-fit:cover;border-radius:3px;margin-top:3.2rem}
 @media(max-width:600px){.wide-photo{aspect-ratio:4/3;object-position:35% center;margin-top:2.4rem}}
+
+/* news items with photos */
+.news-item.has-img{grid-template-columns:150px 1fr 320px}
+.news-img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.news-link{margin-top:.9rem}
+.news-link a{font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;text-decoration:none}
+@media(max-width:900px){.news-item.has-img{grid-template-columns:150px 1fr}.news-item.has-img .news-img{grid-column:2;max-width:420px}}
+@media(max-width:660px){.news-item.has-img{grid-template-columns:1fr}.news-item.has-img .news-img{grid-column:auto;max-width:none}}
