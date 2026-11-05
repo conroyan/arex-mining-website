@@ -37,11 +37,12 @@ p+p{margin-top:1.05em}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
 .nav-bar{display:flex;align-items:center;justify-content:space-between;height:104px}
 .brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
-.brand img{height:44px;width:auto}
+.brand img{height:40px;width:auto}
 .site-footer .brand img{height:42px}
-.site-header .wrap{max-width:1300px}
-.nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;white-space:nowrap}
-.nav-links a,.nav-links .sub-toggle{letter-spacing:.08em;font-size:.84rem;text-decoration:none;color:var(--slate);padding:.4rem 0;border-bottom:2px solid transparent}
+.site-header .wrap{max-width:1340px;padding:0 24px}
+.nav-bar{gap:1.6rem}
+.nav-links{display:flex;gap:.95rem;list-style:none;align-items:center;white-space:nowrap}
+.nav-links a,.nav-links .sub-toggle{letter-spacing:.06em;font-size:.82rem;text-decoration:none;color:var(--slate);padding:.4rem 0;border-bottom:2px solid transparent}
 .nav-links a:hover,.nav-links .sub-toggle:hover{color:var(--teal-deep)}
 .nav-links a[aria-current="page"],.nav-links .has-sub.current>.sub-toggle{border-bottom-color:var(--teal);color:var(--teal-deep)}
 .nav-links .sub-toggle{background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
@@ -56,7 +57,7 @@ p+p{margin-top:1.05em}
 .sub .sub-child a::before{content:"";display:inline-block;width:10px;height:1px;background:var(--teal);vertical-align:middle;margin-right:.6rem}
 .sub .sub-child a:hover{color:var(--teal-deep)}
 .nav-toggle{display:none;background:none;border:1px solid var(--rule);border-radius:4px;padding:.5rem .8rem;letter-spacing:.1em;font-size:.85rem;cursor:pointer;color:var(--slate)}
-@media(max-width:1180px){
+@media(max-width:1240px){
   .nav-toggle{display:block}.nav-bar{height:84px}.brand img{height:38px}
   .nav-links{display:none;position:absolute;top:84px;left:0;right:0;background:#fff;border-bottom:1px solid var(--rule);flex-direction:column;align-items:stretch;gap:0;padding:.5rem 32px 1.2rem;max-height:calc(100vh - 84px);overflow-y:auto}
   .nav-links.open{display:flex}
@@ -203,7 +204,7 @@ html[lang="en"] .draft::before{content:"Draft \2014 content needed"}
 .nav-links .lang a{font-size:.82rem;color:var(--mist);padding:.25rem .45rem;border-radius:3px;border-bottom:none}
 .nav-links .lang a:hover{color:var(--teal-deep)}
 .nav-links .lang a[aria-current="true"]{color:#fff;background:var(--teal-deep)}
-@media(max-width:1180px){.lang{margin:.6rem 0 0;padding:.8rem 0 0;border-left:none;border-top:1px solid var(--rule)}.nav-links .lang a{display:inline-block;width:auto;padding:.3rem .6rem}}
+@media(max-width:1240px){.lang{margin:.6rem 0 0;padding:.8rem 0 0;border-left:none;border-top:1px solid var(--rule)}.nav-links .lang a{display:inline-block;width:auto;padding:.3rem .6rem}}
 
 /* Chinese pages (future): fall back to system CJK faces */
 html[lang^="zh"] body,html[lang^="zh"] .eyebrow,html[lang^="zh"] .nav-links a,html[lang^="zh"] .strip .cell b,html[lang^="zh"] .strip .cell span,html[lang^="zh"] label,html[lang^="zh"] .btn,html[lang^="zh"] .timeline b,html[lang^="zh"] h1,html[lang^="zh"] h2,html[lang^="zh"] h3,html[lang^="zh"] .stat b{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",system-ui,sans-serif}
