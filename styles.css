@@ -247,3 +247,9 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 .news-link a{font-family:'Archivo Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;text-decoration:none}
 @media(max-width:900px){.news-item.has-img{grid-template-columns:150px 1fr}.news-item.has-img .news-img{grid-column:2;max-width:420px}}
 @media(max-width:660px){.news-item.has-img{grid-template-columns:1fr}.news-item.has-img .news-img{grid-column:auto;max-width:none}}
+
+/* page hero with photo */
+.page-hero.photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.page-hero.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(31,43,49,.88) 0%,rgba(31,43,49,.70) 45%,rgba(31,43,49,.25) 100%)}
+.page-hero.photo .wrap{padding-top:7rem;padding-bottom:6.5rem}
+@media(max-width:700px){.page-hero.photo::after{background:linear-gradient(180deg,rgba(31,43,49,.55) 0%,rgba(31,43,49,.85) 100%)}}
