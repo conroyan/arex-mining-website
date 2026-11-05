@@ -222,3 +222,8 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:3px;color:#C3CACD;text-decoration:none}
 .social a:hover{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
 .social svg{width:19px;height:19px}
+
+/* photo pairs */
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.photo-grid img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+@media(max-width:700px){.photo-grid{grid-template-columns:1fr}}
