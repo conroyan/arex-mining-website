@@ -253,3 +253,10 @@ html[lang="de"] h1,html[lang="de"] h2,html[lang="de"] h3{hyphens:auto;overflow-w
 .page-hero.photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(31,43,49,.88) 0%,rgba(31,43,49,.70) 45%,rgba(31,43,49,.25) 100%)}
 .page-hero.photo .wrap{padding-top:7rem;padding-bottom:6.5rem}
 @media(max-width:700px){.page-hero.photo::after{background:linear-gradient(180deg,rgba(31,43,49,.55) 0%,rgba(31,43,49,.85) 100%)}}
+
+/* role cards (project pages) */
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.2rem}
+.role{background:#fff;border:1px solid var(--rule);border-top:3px solid var(--teal);border-radius:3px;padding:1.6rem 1.7rem 1.7rem}
+.role-n{display:block;font-family:'Archivo Black',sans-serif;font-size:1.5rem;line-height:1;color:var(--teal);margin-bottom:.9rem}
+.role p{font-family:'Archivo',sans-serif;font-weight:600;font-size:1.08rem;line-height:1.4;color:var(--slate)}
+@media(max-width:700px){.roles{grid-template-columns:1fr;gap:1rem}.role{padding:1.3rem 1.4rem}}
