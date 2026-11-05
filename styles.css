@@ -45,7 +45,7 @@ p+p{margin-top:1.05em}
 .nav-links a,.nav-links .sub-toggle{letter-spacing:.06em;font-size:.82rem;text-decoration:none;color:var(--slate);padding:.4rem 0;border-bottom:2px solid transparent}
 .nav-links a:hover,.nav-links .sub-toggle:hover{color:var(--teal-deep)}
 .nav-links a[aria-current="page"],.nav-links .has-sub.current>.sub-toggle{border-bottom-color:var(--teal);color:var(--teal-deep)}
-.nav-links .sub-toggle{background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
+.nav-links .sub-toggle{line-height:inherit;font-weight:700;margin:0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
 .sub-toggle .chev{width:9px;height:9px;transition:transform .15s}
 .has-sub{position:relative}
 .sub{list-style:none;display:none;position:absolute;top:100%;left:-1.2rem;min-width:230px;background:#fff;border:1px solid var(--rule);border-top:3px solid var(--teal);border-radius:0 0 3px 3px;padding:.6rem 0;box-shadow:0 10px 24px rgba(4,56,55,.10)}
@@ -268,3 +268,10 @@ html[lang^="zh"] .nav-links .sub-toggle,html[lang^="zh"] .card .more,html[lang^=
 html[lang^="zh"] .hero .hero-title,html[lang^="zh"] .hero .hero-sub{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",system-ui,sans-serif;letter-spacing:.02em}
 html[lang^="zh"] .draft::before{content:"待补充内容"}
 html[lang^="pt"] .draft::before{content:"Pendente \2014 completar"}
+
+/* nav: identical box for links and dropdown buttons so labels share one baseline */
+@media(min-width:1241px){
+  .nav-links>li:not(.lang)>a,.nav-links>li>.sub-toggle{display:inline-flex;align-items:center;height:32px;padding:0;line-height:1;font-size:.82rem;font-family:'Archivo Narrow',sans-serif;vertical-align:middle;box-sizing:border-box;border-top:2px solid transparent}
+  .nav-links>li:not(.lang){display:flex;align-items:center}
+  .nav-links .lang a{line-height:1.2}
+}
