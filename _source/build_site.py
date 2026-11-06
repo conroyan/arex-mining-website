@@ -510,8 +510,8 @@ TEAM = {
     "en": [
         ("Gabriel Pindar", "Chief Executive Officer",
          "28 years' experience as a project executive developing mining and large-scale infrastructure projects across Argentina, Peru, Mexico, Australia, Canada, West Africa and the United Kingdom. A founder of Neo Lithium Corp., created in 2017 and sold to Zijin Mining in 2022, he has served on numerous boards and steering committees delivering large-scale projects."),
-        ("Javier", "Chief Financial Officer", None),
-        ("Martin", "Chief Information Officer", None),
+        ("Javier Nuñez", "Chief Financial Officer", None),
+        ("Martin Manacero", "Chief Information Officer", None),
         ("Angela Conroy", "VP Corporate Affairs and ESG",
          "Lawyer and MBA with more than 20 years' experience in the extractives industry across Australia, Africa and South America. Angela has partnered with governments, investors and local communities to support the responsible development of critical minerals. Recognised as one of Singapore's Top 100 Women in Tech, she combines legal expertise, commercial acumen and entrepreneurial leadership to accelerate the global energy transition."),
         ("Hugo Barrientos", "VP Studies and Projects",
@@ -522,8 +522,8 @@ TEAM = {
     "es": [
         ("Gabriel Pindar", "Director Ejecutivo (CEO)",
          "28 años de experiencia como ejecutivo de proyectos en el desarrollo de proyectos mineros y de infraestructura de gran escala en Argentina, Perú, México, Australia, Canadá, África Occidental y el Reino Unido. Fundador de Neo Lithium Corp., creada en 2017 y vendida a Zijin Mining en 2022, integró numerosos directorios y comités de dirección a cargo de proyectos de gran escala."),
-        ("Javier", "Director de Finanzas (CFO)", None),
-        ("Martin", "Director de Información (CIO)", None),
+        ("Javier Nuñez", "Director de Finanzas (CFO)", None),
+        ("Martin Manacero", "Director de Información (CIO)", None),
         ("Angela Conroy", "VP de Asuntos Corporativos y ESG",
          "Abogada y MBA con más de 20 años de experiencia en la industria extractiva en Australia, África y Sudamérica. Angela ha trabajado junto a gobiernos, inversores y comunidades locales para impulsar el desarrollo responsable de minerales críticos. Reconocida como una de las 100 mujeres más destacadas en tecnología de Singapur, combina experiencia legal, visión comercial y liderazgo emprendedor para acelerar la transición energética global."),
         ("Hugo Barrientos", "VP de Estudios y Proyectos",
