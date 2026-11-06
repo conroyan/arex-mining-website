@@ -506,10 +506,51 @@ def tres_cruces(lang):
     return t, d, body
 PAGES["tres-cruces"] = tres_cruces
 
+TEAM = {
+    "en": [
+        ("Gabriel Pindar", "Chief Executive Officer",
+         "28 years' experience as a project executive developing mining and large-scale infrastructure projects across Argentina, Peru, Mexico, Australia, Canada, West Africa and the United Kingdom. A founder of Neo Lithium Corp., created in 2017 and sold to Zijin Mining in 2022, he has served on numerous boards and steering committees delivering large-scale projects."),
+        ("Javier", "Chief Financial Officer", None),
+        ("Martin", "Chief Information Officer", None),
+        ("Angela Conroy", "VP Corporate Affairs and ESG",
+         "Lawyer and MBA with more than 20 years' experience in the extractives industry across Australia, Africa and South America. Angela has partnered with governments, investors and local communities to support the responsible development of critical minerals. Recognised as one of Singapore's Top 100 Women in Tech, she combines legal expertise, commercial acumen and entrepreneurial leadership to accelerate the global energy transition."),
+        ("Hugo Barrientos", "VP Studies and Projects",
+         "Mechanical engineer with a Management Strategy Diplomate and more than 30 years in the industry. Engineering project manager for all phases and studies at the Cauchari salar and chief project engineer at the Atacama salar for SQM. He led studies for LPI, Minera Salar Blanco and Neo Lithium's 3Q project across Chile and Argentina."),
+        ("Claudio Suarez-Authievre", "VP Processing and Technology",
+         "Ph.D. in physical chemistry with two decades of industrial and academic experience in continental brine processing, and an expert in electrolysis, photo-electrochemistry and electro-catalysis research. Formerly a process researcher at SQM, he developed the process for Lithium Americas at the Cauchari salar and was co-inventor of its proprietary lithium extraction process, later developing the processing technology applied and tested for Neo Lithium's 3Q project."),
+    ],
+    "es": [
+        ("Gabriel Pindar", "Director Ejecutivo (CEO)",
+         "28 años de experiencia como ejecutivo de proyectos en el desarrollo de proyectos mineros y de infraestructura de gran escala en Argentina, Perú, México, Australia, Canadá, África Occidental y el Reino Unido. Fundador de Neo Lithium Corp., creada en 2017 y vendida a Zijin Mining en 2022, integró numerosos directorios y comités de dirección a cargo de proyectos de gran escala."),
+        ("Javier", "Director de Finanzas (CFO)", None),
+        ("Martin", "Director de Información (CIO)", None),
+        ("Angela Conroy", "VP de Asuntos Corporativos y ESG",
+         "Abogada y MBA con más de 20 años de experiencia en la industria extractiva en Australia, África y Sudamérica. Angela ha trabajado junto a gobiernos, inversores y comunidades locales para impulsar el desarrollo responsable de minerales críticos. Reconocida como una de las 100 mujeres más destacadas en tecnología de Singapur, combina experiencia legal, visión comercial y liderazgo emprendedor para acelerar la transición energética global."),
+        ("Hugo Barrientos", "VP de Estudios y Proyectos",
+         "Ingeniero mecánico con diplomatura en Estrategia de Gestión y más de 30 años en la industria. Fue gerente de proyectos de ingeniería en todas las fases y estudios del salar de Cauchari e ingeniero jefe de proyectos en el salar de Atacama para SQM. Dirigió estudios para LPI, Minera Salar Blanco y el proyecto 3Q de Neo Lithium en Chile y Argentina."),
+        ("Claudio Suarez-Authievre", "VP de Procesamiento y Tecnología",
+         "Doctor en fisicoquímica con dos décadas de experiencia industrial y académica en el procesamiento de salmueras continentales, y especialista en investigación en electrólisis, fotoelectroquímica y electrocatálisis. Fue investigador de procesos en SQM, desarrolló el proceso de Lithium Americas para el salar de Cauchari y es coinventor de su proceso propietario de extracción de litio. Luego desarrolló la tecnología de procesamiento aplicada y probada en el proyecto 3Q de Neo Lithium."),
+    ],
+}
+
 def people(lang):
-    if lang == "es":
-        return "Nuestra gente — AREX Mining", "El equipo de AREX Mining.", page_hero("Nuestra gente", "Nuestra gente", tall=True)
-    return "Our People — AREX Mining", "The AREX Mining team.", page_hero("Our People", "Our People", tall=True)
+    L = "es" if lang == "es" else "en"
+    if L == "es":
+        h = page_hero("Nuestra gente", "Nuestra gente",
+                      "Un equipo con trayectoria probada en el desarrollo de proyectos mineros en Argentina y en el mundo.")
+        eb, h2, todo = "Equipo directivo", "Liderazgo", "Biografía pendiente."
+    else:
+        h = page_hero("Our People", "Our People",
+                      "A team with a proven record of developing mining projects in Argentina and around the world.")
+        eb, h2, todo = "Leadership team", "Leadership", "Biography to come."
+    cards = "".join(
+        f'<div class="person"><h3>{n}</h3><p class="person-role">{r}</p>' + (f"<p>{b}</p>" if b else f'<div class="draft">{todo}</div>') + "</div>"
+        for n, r, b in TEAM[L])
+    body = (h + f'<section class="has-contour">{CONTOUR}<div class="wrap"><span class="eyebrow">{eb}</span><h2>{h2}</h2>'
+            f'<div class="grid grid-2" style="margin-top:2rem">{cards}</div></div></section>')
+    t = "Nuestra gente — AREX Mining" if L == "es" else "Our People — AREX Mining"
+    d = "El equipo directivo de AREX Mining." if L == "es" else "The AREX Mining leadership team."
+    return t, d, body
 PAGES["people"] = people
 
 def lab(lang):
